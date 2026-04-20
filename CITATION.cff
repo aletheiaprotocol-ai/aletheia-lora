@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper and software metadata below."
+type: software
+title: "Aletheia-LoRA: Gradient-Guided Layer Selection for Efficient LoRA Fine-Tuning"
+version: "0.1.0"
+date-released: "2026-04-20"
+license: Apache-2.0
+url: "https://github.com/aletheiaprotocol-ai/aletheia-lora"
+repository-code: "https://github.com/aletheiaprotocol-ai/aletheia-lora"
+identifiers:
+  - type: doi
+    value: "10.48550/arXiv.2604.15351"
+    description: "Paper DOI"
+authors:
+  - family-names: Saket
+    given-names: Abdulmalek
+    email: abdulmalek@fenicebrand.com
+    affiliation: "Royal Fenice Kft."
+keywords:
+  - lora
+  - parameter-efficient-fine-tuning
+  - gradient-probe
+  - layer-selection
+  - large-language-models
+abstract: >-
+  Aletheia identifies the most task-relevant transformer layers via a
+  lightweight gradient probe and applies LoRA adapters only to those layers.
+  Across 14 successful models from 8 architecture families (0.5B-72B
+  parameters), Aletheia achieves 15-28% training speedup with bounded
+  extra forgetting.
+preferred-citation:
+  type: article
+  title: "Aletheia: Gradient-Guided Layer Selection for Efficient LoRA Fine-Tuning Across Architectures"
+  authors:
+    - family-names: Saket
+      given-names: Abdulmalek
+      affiliation: "Royal Fenice Kft."
+  year: 2026
+  doi: "10.48550/arXiv.2604.15351"
+  url: "https://arxiv.org/abs/2604.15351"
+  journal: "arXiv preprint arXiv:2604.15351"

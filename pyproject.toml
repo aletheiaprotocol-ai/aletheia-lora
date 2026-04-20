@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aletheia-lora"
+version = "0.1.0"
+description = "Gradient-guided layer selection for efficient LoRA fine-tuning"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Apache-2.0"}
+authors = [{name = "Abdulmalek Saket", email = "abdulmalek@fenicebrand.com"}]
+keywords = ["lora", "peft", "fine-tuning", "gradient", "layer-selection", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.36.0",
+    "peft>=0.7.0",
+]
+
+[project.optional-dependencies]
+eval = [
+    "datasets>=2.14.0",
+    "human-eval",
+]
+dev = [
+    "pytest>=7.4.0",
+    "ruff>=0.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/aletheiaprotocol-ai/aletheia-lora"
+Repository = "https://github.com/aletheiaprotocol-ai/aletheia-lora"
+Paper = "https://arxiv.org/abs/2604.15351"
+DOI = "https://doi.org/10.48550/arXiv.2604.15351"
+Issues = "https://github.com/aletheiaprotocol-ai/aletheia-lora/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
