@@ -22,6 +22,7 @@ Aletheia-LoRA is the public method card for:
 - Paper: https://arxiv.org/abs/2604.15351
 - DOI: https://doi.org/10.48550/arXiv.2604.15351
 - Code: https://github.com/aletheiaprotocol-ai/aletheia-lora
+- Hub: https://huggingface.co/aletheiaprotocol/aletheia-lora
 - License: Apache-2.0
 
 ## What This Is
@@ -71,6 +72,17 @@ layer_scores = gradient_probe(
 selected_layers = select_layers(layer_scores, top_pct=50)
 peft_config = apply_aletheia_lora(model, selected_layers, r=16, lora_alpha=32)
 model = get_peft_model(model, peft_config)
+```
+
+Paper-style asymmetric allocation:
+
+```python
+peft_config = apply_aletheia_lora(
+    model,
+    selected_layers,
+    attention_r=16,
+    mlp_r=64,
+)
 ```
 
 ## Limitations

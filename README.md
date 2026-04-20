@@ -4,6 +4,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2604.15351-b31b1b.svg)](https://arxiv.org/abs/2604.15351)
 [![DOI](https://img.shields.io/badge/DOI-10.48550%2FarXiv.2604.15351-blue.svg)](https://doi.org/10.48550/arXiv.2604.15351)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Method%20Card-yellow.svg)](https://huggingface.co/aletheiaprotocol/aletheia-lora)
 [![License](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
 
 Aletheia identifies the most informative transformer layers with a lightweight gradient probe, then applies LoRA adapters only to those layers. Across the finalized Research Line A evidence pack, this yields a **15-28% training speedup** with **bounded extra forgetting and broadly matched downstream behavior** across **14 successful models** from **8 architecture families** spanning **0.5B to 72B parameters**.
@@ -11,6 +12,8 @@ Aletheia identifies the most informative transformer layers with a lightweight g
 Paper: [Aletheia: Gradient-Guided Layer Selection for Efficient LoRA Fine-Tuning Across Architectures](https://arxiv.org/abs/2604.15351)
 
 DOI: [10.48550/arXiv.2604.15351](https://doi.org/10.48550/arXiv.2604.15351)
+
+Hugging Face card: [aletheiaprotocol/aletheia-lora](https://huggingface.co/aletheiaprotocol/aletheia-lora)
 
 ## Installation
 
@@ -54,6 +57,17 @@ peft_config = apply_aletheia_lora(
     lora_alpha=32,
 )
 model = get_peft_model(model, peft_config)
+```
+
+To use the paper-style asymmetric attention/MLP allocation:
+
+```python
+peft_config = apply_aletheia_lora(
+    model=model,
+    selected_layers=selected_layers,
+    attention_r=16,
+    mlp_r=64,
+)
 ```
 
 ## Supported Claim

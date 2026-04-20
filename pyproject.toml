@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aletheia-lora"
-version = "0.1.0"
+version = "0.1.1"
 description = "Gradient-guided layer selection for efficient LoRA fine-tuning"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -40,6 +40,7 @@ Homepage = "https://github.com/aletheiaprotocol-ai/aletheia-lora"
 Repository = "https://github.com/aletheiaprotocol-ai/aletheia-lora"
 Paper = "https://arxiv.org/abs/2604.15351"
 DOI = "https://doi.org/10.48550/arXiv.2604.15351"
+HuggingFace = "https://huggingface.co/aletheiaprotocol/aletheia-lora"
 Issues = "https://github.com/aletheiaprotocol-ai/aletheia-lora/issues"
 
 [tool.setuptools.packages.find]

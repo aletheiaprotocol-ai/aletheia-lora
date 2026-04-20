@@ -85,6 +85,24 @@ class TestAletheiaLoraConfig:
         assert cfg.r == 8
         assert cfg.lora_alpha == 16
 
+    def test_asymmetric_rank_pattern(self):
+        cfg = aletheia_lora_config([1, 3], attention_r=16, mlp_r=64)
+        assert cfg.r == 16
+        assert cfg.rank_pattern["q_proj"] == 16
+        assert cfg.rank_pattern["k_proj"] == 16
+        assert cfg.rank_pattern["v_proj"] == 16
+        assert cfg.rank_pattern["o_proj"] == 16
+        assert cfg.rank_pattern["gate_proj"] == 64
+        assert cfg.rank_pattern["up_proj"] == 64
+        assert cfg.rank_pattern["down_proj"] == 64
+
+    def test_asymmetric_alpha_pattern(self):
+        cfg = aletheia_lora_config([1, 3], attention_alpha=32, mlp_alpha=128)
+        assert cfg.alpha_pattern["q_proj"] == 32
+        assert cfg.alpha_pattern["o_proj"] == 32
+        assert cfg.alpha_pattern["gate_proj"] == 128
+        assert cfg.alpha_pattern["down_proj"] == 128
+
     def test_custom_target_modules(self):
         modules = ["q_proj", "v_proj"]
         cfg = aletheia_lora_config([0], target_modules=modules)
@@ -119,6 +137,11 @@ class TestApplyAletheiaLora:
         assert cfg1.layers_to_transform == cfg2.layers_to_transform
         assert cfg1.lora_alpha == cfg2.lora_alpha
 
+    def test_forwards_asymmetric_args(self):
+        cfg = apply_aletheia_lora(None, [0, 5], attention_r=8, mlp_r=32)
+        assert cfg.rank_pattern["q_proj"] == 8
+        assert cfg.rank_pattern["up_proj"] == 32
+
 
 # ── gradient_probe (import-only, no GPU) ─────────────────
 
@@ -144,7 +167,7 @@ class TestExports:
 
     def test_version(self):
         import aletheia_lora
-        assert aletheia_lora.__version__ == "0.1.0"
+        assert aletheia_lora.__version__ == "0.1.1"
 
     def test_all_exports(self):
         import aletheia_lora

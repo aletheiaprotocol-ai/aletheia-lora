@@ -18,6 +18,8 @@ language:
 
 **DOI:** [10.48550/arXiv.2604.15351](https://doi.org/10.48550/arXiv.2604.15351)
 
+**Hugging Face:** [aletheiaprotocol/aletheia-lora](https://huggingface.co/aletheiaprotocol/aletheia-lora)
+
 **Author:** Abdulmalek Saket (Royal Fenice Kft.)
 
 **License:** Apache-2.0
@@ -51,6 +53,17 @@ from aletheia_lora import gradient_probe, select_layers, apply_aletheia_lora
 layer_scores = gradient_probe(model, dataset, num_layers=36, probe_batches=5)
 selected_layers = select_layers(layer_scores, top_pct=50)
 peft_config = apply_aletheia_lora(model, selected_layers, r=16, lora_alpha=32)
+```
+
+Paper-style asymmetric allocation is also supported:
+
+```python
+peft_config = apply_aletheia_lora(
+    model,
+    selected_layers,
+    attention_r=16,
+    mlp_r=64,
+)
 ```
 
 ## Installation

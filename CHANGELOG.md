@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 (2026-04-20)
+
+Patch release.
+
+- Added optional asymmetric rank and alpha allocation via `attention_r`, `mlp_r`, `attention_alpha`, and `mlp_alpha`.
+- Preserved backward-compatible uniform-rank behavior for existing users.
+- Added tests for paper-style attention/MLP rank patterns.
+
 ## 0.1.0 (2026-04-20)
 
 Initial public release aligned with arXiv:2604.15351.
