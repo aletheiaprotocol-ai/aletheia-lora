@@ -3,6 +3,10 @@
 The public package repository intentionally excludes raw HPC outputs, trained
 adapters, checkpoints, and large result directories.
 
+A sanitized aggregate companion is published at:
+
+- https://huggingface.co/datasets/aletheiaprotocol/aletheia-lora-evidence
+
 Recommended public evidence bundle contents:
 
 - aggregate run inventory (`aggregate_runs.csv`)

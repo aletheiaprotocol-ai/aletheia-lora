@@ -20,6 +20,8 @@ language:
 
 **Hugging Face:** [aletheiaprotocol/aletheia-lora](https://huggingface.co/aletheiaprotocol/aletheia-lora)
 
+**Evidence Dataset:** [aletheiaprotocol/aletheia-lora-evidence](https://huggingface.co/datasets/aletheiaprotocol/aletheia-lora-evidence)
+
 **Author:** Abdulmalek Saket (Royal Fenice Kft.)
 
 **License:** Apache-2.0
@@ -93,6 +95,10 @@ pip install -e ".[dev]"
 - Gradient probe assumes a causal LM objective; other objectives are not tested here.
 - Speedup percentages are wall-clock measurements on the reported hardware; they may differ on other systems.
 - The package currently exposes the core method API, not a one-command Trainer wrapper.
+
+## Evidence Bundle
+
+A sanitized aggregate evidence companion is available at [aletheiaprotocol/aletheia-lora-evidence](https://huggingface.co/datasets/aletheiaprotocol/aletheia-lora-evidence). It contains aggregate metadata and final figures only. It excludes credentials, raw datasets, checkpoints, adapter weights, full gradient score dictionaries, and private cloud paths.
 
 ## Citation
 

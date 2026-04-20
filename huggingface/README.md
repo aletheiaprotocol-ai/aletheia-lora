@@ -23,6 +23,7 @@ Aletheia-LoRA is the public method card for:
 - DOI: https://doi.org/10.48550/arXiv.2604.15351
 - Code: https://github.com/aletheiaprotocol-ai/aletheia-lora
 - Hub: https://huggingface.co/aletheiaprotocol/aletheia-lora
+- Evidence: https://huggingface.co/datasets/aletheiaprotocol/aletheia-lora-evidence
 - License: Apache-2.0
 
 ## What This Is
@@ -92,6 +93,14 @@ peft_config = apply_aletheia_lora(
 - The current package exposes the method API; production Trainer integrations should be added separately.
 - Wall-clock speedups were measured in the reported hardware/software setup and may vary on other systems.
 - This card should not be used to imply that Aletheia improves every model or every metric.
+
+## Evidence Bundle
+
+A sanitized aggregate evidence companion is available at:
+
+- https://huggingface.co/datasets/aletheiaprotocol/aletheia-lora-evidence
+
+The evidence bundle contains aggregate metadata and final figures only. It excludes credentials, raw datasets, checkpoints, adapter weights, full gradient dictionaries, and private cloud paths.
 
 ## Citation
 

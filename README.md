@@ -15,6 +15,8 @@ DOI: [10.48550/arXiv.2604.15351](https://doi.org/10.48550/arXiv.2604.15351)
 
 Hugging Face card: [aletheiaprotocol/aletheia-lora](https://huggingface.co/aletheiaprotocol/aletheia-lora)
 
+Evidence dataset: [aletheiaprotocol/aletheia-lora-evidence](https://huggingface.co/datasets/aletheiaprotocol/aletheia-lora-evidence)
+
 ## Installation
 
 Until the package is published to PyPI, install it from source:
@@ -113,7 +115,7 @@ This package supports that finished narrow claim. It does not claim:
 
 ## Reproducibility
 
-The full empirical record is described in the paper. In the NEXUS monorepo, the raw Line A artifacts live under `aletheia_results/`, `aletheia_figures/`, `leo_slurm/`, and `paper/aletheia_paper.*`. If this package is released as a standalone repository, freeze those artifacts in a separate release asset or Hugging Face dataset rather than mixing large experiment outputs into the source package.
+The full empirical record is described in the paper. A sanitized aggregate evidence companion is published at [aletheiaprotocol/aletheia-lora-evidence](https://huggingface.co/datasets/aletheiaprotocol/aletheia-lora-evidence). It contains aggregate metadata and final figures only; it excludes credentials, raw datasets, checkpoints, adapter weights, full gradient score dictionaries, and private cloud paths.
 
 ## Citation
 
