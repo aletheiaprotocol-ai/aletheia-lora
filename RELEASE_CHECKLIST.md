@@ -31,7 +31,7 @@ python -m twine check dist/*
 - `CHANGELOG.md` - release notes.
 - `pyproject.toml` - package metadata.
 - `.github/workflows/ci.yml` - public CI.
-- `.github/workflows/publish-pypi.yml` - manual PyPI publish workflow.
+- `.github/workflows/publish-pypi.yml` - manual PyPI publish workflow using Trusted Publishing.
 
 ## 3. Hugging Face Hub
 
