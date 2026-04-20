@@ -1,0 +1,9 @@
+include CHANGELOG.md
+include CITATION.cff
+include MODEL_CARD.md
+include RELEASE_CHECKLIST.md
+include huggingface/README.md
+recursive-include docs *.md
+recursive-include examples *.py
+recursive-include notebooks *.ipynb
+recursive-include tests *.py

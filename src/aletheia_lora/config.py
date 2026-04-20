@@ -1,6 +1,4 @@
-"""
-PEFT LoRA config generation with Aletheia layer selection.
-"""
+"""PEFT LoRA config generation with Aletheia layer selection."""
 
 from typing import Dict, List, Optional, Tuple
 
@@ -49,28 +47,22 @@ def aletheia_lora_config(
     lora_dropout: float = 0.0,
     task_type: str = "CAUSAL_LM",
 ) -> LoraConfig:
-    """
-    Build a PEFT LoraConfig that only adapts the selected layers.
+    """Build a PEFT LoraConfig that only adapts the selected layers.
 
     Args:
-        selected_layers: Sorted list of layer indices to adapt
-            (as returned by :func:`select_layers`).
-        target_modules: LoRA target module names. Defaults to standard
-            Llama/Qwen modules.
-        r: LoRA rank (default 16).
-        lora_alpha: LoRA alpha scaling (default 32).
-        attention_r: Optional rank override for attention projections
-            (q/k/v/o). Use with ``mlp_r`` to reproduce asymmetric recipes.
-        mlp_r: Optional rank override for MLP projections
-            (gate/up/down). For example, paper-style asymmetric configs can
-            use ``attention_r=16`` and ``mlp_r=64``.
+        selected_layers: Sorted list of layer indices to adapt, as returned by select_layers().
+        target_modules: LoRA target module names. Defaults to standard Llama/Qwen modules.
+        r: LoRA rank used for modules without an asymmetric override.
+        lora_alpha: LoRA alpha scaling used for modules without an asymmetric override.
+        attention_r: Optional rank override for q/k/v/o projections.
+        mlp_r: Optional rank override for gate/up/down projections.
         attention_alpha: Optional alpha override for attention projections.
         mlp_alpha: Optional alpha override for MLP projections.
-        lora_dropout: Dropout probability for LoRA layers (default 0.0).
-        task_type: PEFT task type (default ``"CAUSAL_LM"``).
+        lora_dropout: Dropout probability for LoRA layers.
+        task_type: PEFT task type.
 
     Returns:
-        A :class:`peft.LoraConfig` with ``layers_to_transform`` set.
+        A PEFT LoraConfig with layers_to_transform set.
     """
     if target_modules is None:
         target_modules = [
@@ -112,12 +104,10 @@ def apply_aletheia_lora(
     lora_dropout: float = 0.0,
     task_type: str = "CAUSAL_LM",
 ) -> LoraConfig:
-    """
-    Convenience wrapper: builds the LoRA config for Aletheia.
-    Returns the config (caller applies via ``get_peft_model``).
+    """Build an Aletheia LoRA config.
 
-    This is identical to :func:`aletheia_lora_config` — provided
-    for a friendlier API name.
+    The ``model`` argument is accepted for API convenience; callers apply the returned
+    config with PEFT's get_peft_model().
     """
     return aletheia_lora_config(
         selected_layers=selected_layers,

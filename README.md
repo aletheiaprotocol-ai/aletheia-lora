@@ -103,7 +103,10 @@ This package supports that finished narrow claim. It does not claim:
 |------|---------|
 | `src/aletheia_lora/` | Core library: probe, layer selection, and PEFT config builder |
 | `examples/quick_start.py` | CPU-safe usage demo with simulated layer scores |
+| `notebooks/quickstart_simulated_probe.ipynb` | Notebook version of the CPU-safe API demo |
 | `tests/` | Unit tests for the public API |
+| `.github/workflows/ci.yml` | Public CI for supported Python versions |
+| `docs/` | PyPI, Papers with Code, arXiv v2, and evidence-bundle notes |
 | `MODEL_CARD.md` | Human-readable method card |
 | `huggingface/README.md` | Hugging Face Hub-ready card |
 | `CITATION.cff` | GitHub citation metadata |

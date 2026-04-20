@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the paper and software metadata below."
 type: software
 title: "Aletheia-LoRA: Gradient-Guided Layer Selection for Efficient LoRA Fine-Tuning"
-version: "0.1.0"
+version: "0.1.2"
 date-released: "2026-04-20"
 license: Apache-2.0
 url: "https://github.com/aletheiaprotocol-ai/aletheia-lora"

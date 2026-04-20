@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2 (2026-04-20)
+
+Release-hardening patch.
+
+- Added GitHub Actions CI and release/publishing documentation.
+- Fixed quick-start wording to avoid the unsupported "zero degradation" claim.
+- Added input validation for layer selection.
+- Made `gradient_probe()` CPU-safe by only using CUDA autocast/cache clearing on CUDA devices.
+- Added a tutorial notebook and aggregate evidence-bundle workflow.
+
 ## 0.1.1 (2026-04-20)
 
 Patch release.
